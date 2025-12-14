@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.12-slim'
-        }
-    }
+    agent any
 
     environment {
         AWS_REGION     = 'us-west-2'
@@ -29,9 +25,14 @@ pipeline {
             steps {
                 sh '''
                     cd app
+                    # Create and activate venv
                     python3 -m venv venv
                     . venv/bin/activate
+
+                    # Upgrade pip safely, ignore harmless warnings
                     pip install --upgrade pip --no-cache-dir || true
+
+                    # Install dependencies, ignore harmless warnings
                     pip install --no-cache-dir -r requirements.txt || true
                 '''
             }
@@ -91,9 +92,3 @@ pipeline {
         }
     }
 }
-
-
-
-
-
-
