@@ -14,6 +14,12 @@ End-to-end EKS CI/CD Projectto deploy a Flask application to AWS EKS using Terra
 
 <img src="https://skillicons.dev/icons?i=jenkins" height="40" alt="jenkins logo"  /> --> Automation
 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/aws/aws-original.svg" alt="AWS" width="60" height="60"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" width="60" height="60"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" width="60" height="60"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="60" height="60"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jenkins/jenkins-original.svg" alt="Jenkins" width="60" height="60"/>
+
 ```
 
 ## 🚀 Quick Start (Total: 2-3 hours)
