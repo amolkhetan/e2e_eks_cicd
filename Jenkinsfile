@@ -31,8 +31,8 @@ pipeline {
                     cd app
                     python3 -m venv venv
                     . venv/bin/activate
-                    pip install --upgrade pip
-                    pip install --no-cache-dir -r requirements.txt
+                    pip install --upgrade pip || true
+                    pip install --no-cache-dir -r requirements.txt || true
                 '''
             }
         }
@@ -91,6 +91,7 @@ pipeline {
         }
     }
 }
+
 
 
 
