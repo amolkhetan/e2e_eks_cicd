@@ -4,21 +4,12 @@ End-to-end EKS CI/CD Projectto deploy a Flask application to AWS EKS using Terra
 ## 📋 Tech Stack
 
 ```
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" height="40" alt="terraform logo"  />  --> Infra Provisioning
-
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="git logo"  /> -->  As a source code repo 
-
-<img src="https://cdn.simpleicons.org/docker/2496ED" height="40" alt="docker logo"  /> --> Image Building
-
-<img src="https://skillicons.dev/icons?i=aws" height="40" alt="amazonwebservices logo"  /> --> ECR and EKS (Image Repo and Pod Deployments) 
-
-<img src="https://skillicons.dev/icons?i=jenkins" height="40" alt="jenkins logo"  /> --> Automation
-
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/aws/aws-original.svg" alt="AWS" width="60" height="60"/>
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" width="60" height="60"/>
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" width="60" height="60"/>
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="60" height="60"/>
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jenkins/jenkins-original.svg" alt="Jenkins" width="60" height="60"/>
+Terraform --> Infra Provisioning
+GitHub    --> As a source code repo
+Docker    --> Image Building
+ECR       --> AWS Image/container Register
+EKS       --> AWS K8s environment for deployment
+Jenkins   --> To enable Automation
 
 ```
 
@@ -286,19 +277,15 @@ curl http://$LB_URL/version
    ```
 
 6. ✅ **Application Running**
-   - Browser showing LoadBalancer URL
-   - Postman/curl showing API responses
+   - Browser showing LoadBalancer URL af68d092137d74a6ba24510fc287fc72-1055447331.us-west-2.elb.amazonaws.com
+
+     <img width="1917" height="497" alt="image" src="https://github.com/user-attachments/assets/149a5ec7-00ca-492d-a52e-db187908e8da" />
 
 7. ✅ **Application Endpoints**
    ```bash
    # Home
    curl http://$LB_URL/ | jq
 
-   # Health
-   curl http://$LB_URL/health | jq
-
-   # Tasks API
-   curl http://$LB_URL/api/tasks | jq
    ```
 
 ---
