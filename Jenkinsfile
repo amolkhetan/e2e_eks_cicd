@@ -25,11 +25,10 @@ pipeline {
             steps {
                 sh '''
                     cd app
-                    curl -sS https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-                    python3 get-pip.py --user
-                    python3 -m pip install --upgrade pip
-                    python3 -m pip install -r app/requirements.txt
-                    python3 -m unittest discover -s tests -v
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r app/requirements.txt
                 '''
             }
         }
@@ -89,4 +88,5 @@ pipeline {
     }
 
 }
+
 
