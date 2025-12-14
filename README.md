@@ -1,10 +1,19 @@
 # E2E_EKS_CICD
 End-to-end EKS CI/CD Projectto deploy a Flask application to AWS EKS using Terraform and Jenkins.
 
-## 📋 Architecture
+## 📋 Tech Stack
 
 ```
-GitHub → Jenkins → Docker → AWS ECR → EKS Cluster → LoadBalancer
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" height="40" alt="terraform logo"  />  --> Infra Provisioning
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="40" alt="git logo"  /> -->  As a source code repo 
+
+<img src="https://cdn.simpleicons.org/docker/2496ED" height="40" alt="docker logo"  /> --> Image Building
+
+<img src="https://skillicons.dev/icons?i=aws" height="40" alt="amazonwebservices logo"  /> --> ECR and EKS (Image Repo and Pod Deployments) 
+
+<img src="https://skillicons.dev/icons?i=jenkins" height="40" alt="jenkins logo"  /> --> Automation
+
 ```
 
 ## 🚀 Quick Start (Total: 2-3 hours)
@@ -150,8 +159,7 @@ python3 app.py
 
 # Test endpoints:
 curl http://localhost:5000/
-curl http://localhost:5000/health
-curl http://localhost:5000/api/tasks
+
 ```
 
 ---
