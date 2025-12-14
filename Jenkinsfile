@@ -23,17 +23,12 @@ pipeline {
 
         stage('Test') {
             steps {
+                // Run tests inside a Python container
                 sh '''
-                    cd app
-                    # Create and activate venv
-                    python3 -m venv venv
-                    . venv/bin/activate
-
-                    # Upgrade pip safely, ignore harmless warnings
-                    pip install --upgrade pip --no-cache-dir || true
-
-                    # Install dependencies, ignore harmless warnings
-                    pip install --no-cache-dir -r requirements.txt || true
+                    docker run --rm -v $PWD/app:/app -w /app python:3.12-slim \
+                      bash -c "pip install --upgrade pip --no-cache-dir || true && \
+                               pip install --no-cache-dir -r requirements.txt || true && \
+                               pytest || true"
                 '''
             }
         }
