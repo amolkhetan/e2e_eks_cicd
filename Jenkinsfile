@@ -25,7 +25,8 @@ pipeline {
             steps {
                 sh '''
                     cd app
-                    python3 -m ensurepip --upgrade || sudo apt-get install -y python3-pip
+                    curl -sS https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+                    python3 get-pip.py --user
                     python3 -m pip install --upgrade pip
                     python3 -m pip install -r app/requirements.txt
                     python3 -m unittest discover -s tests -v
@@ -88,3 +89,4 @@ pipeline {
     }
 
 }
+
