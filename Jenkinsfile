@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'python:3.12-slim'
+            args '-u root'   // run as root so pip installs work cleanly
+        }
+    }
 
     environment {
         AWS_REGION     = 'us-west-2'
@@ -25,10 +30,8 @@ pipeline {
             steps {
                 sh '''
                     cd app
-                    python3 -m venv venv
-                    . venv/bin/activate
                     pip install --upgrade pip
-                    pip install -r app/requirements.txt
+                    pip install -r requirements.txt
                 '''
             }
         }
@@ -86,7 +89,4 @@ pipeline {
             cleanWs()
         }
     }
-
 }
-
-
