@@ -29,6 +29,9 @@ pipeline {
             steps {
                 sh '''
                     cd app
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
                     pip install -r requirements.txt
                 '''
             }
@@ -88,5 +91,6 @@ pipeline {
         }
     }
 }
+
 
 
