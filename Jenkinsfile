@@ -25,7 +25,9 @@ pipeline {
             steps {
                 sh '''
                     cd app
-                    python3 -m pip install --user -r requirements.txt
+                    python3 -m ensurepip --upgrade || sudo apt-get install -y python3-pip
+                    python3 -m pip install --upgrade pip
+                    python3 -m pip install -r app/requirements.txt
                     python3 -m unittest discover -s tests -v
                 '''
             }
@@ -84,4 +86,5 @@ pipeline {
             cleanWs()
         }
     }
+
 }
