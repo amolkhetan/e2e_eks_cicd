@@ -46,13 +46,13 @@ spec:
             cpu: "200m"
         livenessProbe:
           httpGet:
-            path: /health
+            path: /
             port: 5000
           initialDelaySeconds: 15
           periodSeconds: 20
         readinessProbe:
           httpGet:
-            path: /ready
+            path: /
             port: 5000
           initialDelaySeconds: 10
           periodSeconds: 10
@@ -71,4 +71,5 @@ spec:
   ports:
   - port: 80
     targetPort: 5000
+
     protocol: TCP
