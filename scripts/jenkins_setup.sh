@@ -68,7 +68,7 @@ sudo systemctl restart jenkins
 echo "================================"
 echo "Jenkins Setup Complete!"
 echo "================================"
-echo "Jenkins is running on: http://$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4):8080"
+echo "Jenkins is running on: http://$(curl -s http://54.186.204.68/latest/meta-data/public-ipv4):8080"
 echo ""
 echo "Initial admin password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
